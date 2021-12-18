@@ -2,17 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { store } from "./app/store";
 import { Provider as ReduxProvider } from "react-redux";
-import { customColors } from "./utils";
-
-const theme = extendTheme({ customColors });
+import { ChakraProvider } from "@chakra-ui/react";
+import { store } from "./app/store";
+import { ColorModeScript } from "@chakra-ui/color-mode";
+import theme from "./theme";
 
 ReactDOM.render(
   <React.StrictMode>
     <ReduxProvider store={store}>
       <ChakraProvider theme={theme}>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <App />
       </ChakraProvider>
     </ReduxProvider>
