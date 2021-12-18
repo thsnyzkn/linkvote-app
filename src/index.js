@@ -3,15 +3,19 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { customColors } from "../utils";
+import { store } from "./app/store";
+import { Provider as ReduxProvider } from "react-redux";
+import { customColors } from "./utils";
 
 const theme = extendTheme({ customColors });
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <App />
-    </ChakraProvider>
+    <ReduxProvider store={store}>
+      <ChakraProvider theme={theme}>
+        <App />
+      </ChakraProvider>
+    </ReduxProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
