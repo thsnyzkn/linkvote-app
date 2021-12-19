@@ -5,11 +5,11 @@ const config = {
   useSystemColorMode: true,
 };
 
-const customColors = {
+const colors = {
   black: "#000000",
   primary: "#ECECEC",
   secondary: "#F7F7F7",
 };
-const theme = extendTheme({ config, customColors });
+const theme = extendTheme({ config, colors });
 
 export default theme;
