@@ -5,8 +5,13 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider as ReduxProvider } from "react-redux";
 import { ChakraProvider } from "@chakra-ui/react";
 import { store } from "./app/store";
+import { saveState } from "./app/localStorage";
 import { ColorModeScript } from "@chakra-ui/color-mode";
 import theme from "./theme";
+
+store.subscribe(() => {
+  saveState(store.getState());
+});
 
 ReactDOM.render(
   <React.StrictMode>
