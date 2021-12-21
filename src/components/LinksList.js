@@ -18,43 +18,42 @@ const LinksList = ({
   const dispatch = useDispatch();
   const listToBeRendered = sortedList?.map(({ id, points, title, url }) => {
     return (
-      <>
-        <Box
-          key={id}
-          position="relative"
-          d="flex"
-          textAlign="center"
-          justifyContent="start"
-          pt={1}
-          pr={2}
-          mt={3}
-          _hover={{
-            bg: "secondary",
-            cursor: "pointer",
-            borderRadius: "md",
-          }}
-        >
-          <ScoreBox points={points} />
-          <Stack ml={4} pl={1}>
-            <TitleLinkPanel url={url} title={title} />
-            <VoteButtons
-              upvoteLink={() => dispatch(upvoteLink(id))}
-              downVoteLink={() => dispatch(downVoteLink(id))}
-            />
-          </Stack>
-          <DeleteButton openAlert={() => openAlert(id)} />
-          <Alert
-            openAlert={() => openAlert(id)}
-            isOpen={isOpen[id]}
-            closeAlert={() => closeAlert(id)}
-            removeLink={() => dispatch(removeLink(id))}
-            title={title}
+      <Box
+        key={id}
+        as="li"
+        position="relative"
+        d="flex"
+        textAlign="center"
+        justifyContent="start"
+        pt={1}
+        pr={2}
+        mt={3}
+        _hover={{
+          bg: "secondary",
+          cursor: "pointer",
+          borderRadius: "md",
+        }}
+      >
+        <ScoreBox points={points} />
+        <Stack ml={4} pl={1}>
+          <TitleLinkPanel url={url} title={title} />
+          <VoteButtons
+            upvoteLink={() => dispatch(upvoteLink(id))}
+            downVoteLink={() => dispatch(downVoteLink(id))}
           />
-        </Box>
-      </>
+        </Stack>
+        <DeleteButton openAlert={() => openAlert(id)} />
+        <Alert
+          openAlert={() => openAlert(id)}
+          isOpen={isOpen[id]}
+          closeAlert={() => closeAlert(id)}
+          removeLink={() => dispatch(removeLink(id))}
+          title={title}
+        />
+      </Box>
     );
   });
-  return <>{listToBeRendered}</>;
+  return <ul data-testid="links-list">{listToBeRendered}</ul>;
 };
 
 export default LinksList;

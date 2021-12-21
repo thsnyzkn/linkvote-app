@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Button } from "@chakra-ui/react";
 
-const AlertButton = ({ handleClick, ref, title }) => (
+const AlertButton = ({ handleClick, reference, title }) => (
   <Button
     minW="8rem"
     height="2.5rem"
@@ -12,7 +12,7 @@ const AlertButton = ({ handleClick, ref, title }) => (
     _active={{ bg: "black" }}
     variant="solid"
     borderRadius="50px"
-    ref={ref}
+    ref={reference}
     onClick={handleClick}
   >
     {title.toUpperCase()}
@@ -20,8 +20,8 @@ const AlertButton = ({ handleClick, ref, title }) => (
 );
 AlertButton.propTypes = {
   handleClick: PropTypes.func.isRequired,
-  ref: PropTypes.func,
+  reference: PropTypes.object,
   title: PropTypes.string,
 };
-AlertButton.defaultProps = { title: "" };
+AlertButton.defaultProps = { title: "", reference: {} };
 export default AlertButton;

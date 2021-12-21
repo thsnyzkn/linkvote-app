@@ -67,7 +67,7 @@ const Alert = ({ closeAlert, isOpen, removeLink, title }) => {
           />
           <AlertButton
             title="Cancel"
-            ref={cancelRef}
+            reference={cancelRef}
             handleClick={closeAlert}
           />
         </AlertDialogFooter>

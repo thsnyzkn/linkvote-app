@@ -1,7 +1,30 @@
 import App from "./App";
 import { render, fireEvent, screen, waitFor, within } from "./test-utils";
-test("renders learn react link", () => {
+test("prompts user to submit a link", () => {
   render(<App />);
-  const textElement = screen.getByText(/Hello/i);
+  const textElement = screen.getByText(/SUBMIT A LINK/i);
   expect(textElement).toBeInTheDocument();
+});
+test("user can click Icon Button with an Plus Icon and navigates to new link page", () => {
+  render(<App />);
+  const addButton = screen.getByRole("button");
+  expect(addButton).toBeInTheDocument();
+  fireEvent.click(addButton);
+  const firstLabel = screen.getByText(/Link Name/i);
+  expect(firstLabel).toBeInTheDocument();
+  const secondLabel = screen.getByText(/Link URL/i);
+  expect(secondLabel).toBeInTheDocument();
+  const titleInput = screen.getByLabelText(/Link Name/i);
+  fireEvent.change(titleInput, { target: { value: "Reddit" } });
+  const urlInput = screen.getByLabelText(/Link URL/i);
+  fireEvent.change(urlInput, { target: { value: "https://www.reddit.com" } });
+  const submitButton = screen.getByText(/ADD/i);
+  fireEvent.click(submitButton);
+  expect(screen.getByText(/REDDIT added/i)).toBeInTheDocument();
+  const backButton = screen.getByTestId("back-button");
+  fireEvent.click(backButton);
+  const linksList = screen.getByTestId("links-list");
+  const { getAllByRole } = within(linksList);
+  const items = getAllByRole("listitem");
+  expect(items).toHaveLength(1);
 });

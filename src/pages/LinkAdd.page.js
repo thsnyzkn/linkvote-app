@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
+import { ArrowBackIcon } from "@chakra-ui/icons";
 import { useDispatch } from "react-redux";
 import { addLink } from "../features/linkList/linkSlice";
 import SubmitButton from "../components/SubmitButton";
@@ -40,7 +41,8 @@ const AddLink = () => {
       <RouterLink to={"/"}>
         <Box mb={4}>
           <Button
-            leftIcon="arrow-back"
+            data-testid="back-button"
+            leftIcon={<ArrowBackIcon />}
             varian="ghost"
             bg="white"
             color="black"

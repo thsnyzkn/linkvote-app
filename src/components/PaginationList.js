@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Flex, Button, IconButton } from "@chakra-ui/react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 const PaginationList = ({
   listOfPages,
@@ -16,8 +17,7 @@ const PaginationList = ({
         <Flex mt={5} justifyContent="center">
           <IconButton
             aria-label="Previous paginated List"
-            icon="chevron-left"
-            variantColor="gray.900"
+            icon={<ChevronLeftIcon />}
             variant="ghost"
             _hover={{ fontSize: "lg" }}
             onClick={() => dispatch(goPrevPage())}
@@ -27,7 +27,7 @@ const PaginationList = ({
             return (
               <Button
                 key={index}
-                variantColor="gray.900"
+                colorScheme="gray.900"
                 variant={currentPage === index + 1 ? "outline" : "ghost"}
                 onClick={() => dispatch(goClickedPage(index + 1))}
                 aria-label="Change pagination index"
@@ -38,8 +38,7 @@ const PaginationList = ({
           })}
           <IconButton
             aria-label="Next paginated List"
-            icon="chevron-right"
-            variantColor="gray.900"
+            icon={<ChevronRightIcon />}
             _hover={{ fontSize: "lg" }}
             variant="ghost"
             onClick={() => dispatch(goNextPage())}

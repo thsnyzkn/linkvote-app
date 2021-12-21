@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <Layout>
-      <header>Hello</header>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LinkVote />} />

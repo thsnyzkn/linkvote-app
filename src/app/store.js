@@ -12,4 +12,8 @@ export const store = configureStore({
     pagination: paginationReducer,
   },
   preloadedState,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });

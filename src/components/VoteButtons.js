@@ -1,14 +1,20 @@
 import PropTypes from "prop-types";
 import { Stack, Button } from "@chakra-ui/react";
+import { ArrowUpIcon, ArrowDownIcon } from "@chakra-ui/icons";
 
 const VoteButtons = ({ upvoteLink, downVoteLink }) => {
   return (
     <Stack direction="row" justfiy="space-around">
-      <Button leftIcon="arrow-up" variant="ghost" pl={1} onClick={upvoteLink}>
+      <Button
+        leftIcon={<ArrowUpIcon />}
+        variant="ghost"
+        pl={1}
+        onClick={upvoteLink}
+      >
         Up Vote
       </Button>
       <Button
-        leftIcon="arrow-down"
+        leftIcon={<ArrowDownIcon />}
         variant="ghost"
         pl={1}
         onClick={downVoteLink}

@@ -7,8 +7,8 @@ const SubmissionBox = () => (
     align="center"
     justifyContent="space-between"
     bg="secondary"
-    py={3}
-    pl="4"
+    pl="3"
+    py="3"
     pr="6"
     border="1px"
     borderRadius="md"
@@ -19,8 +19,8 @@ const SubmissionBox = () => (
       <IconButton
         aria-label="Add new post"
         icon={<AddIcon />}
-        height="5rem"
-        minW="5rem"
+        height="6rem"
+        minW="6rem"
         border="1px"
         fontSize="32px"
         bg="primary"

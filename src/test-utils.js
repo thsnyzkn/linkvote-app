@@ -14,6 +14,10 @@ function render(
     store = configureStore({
       reducer: { linkList: linksReducer, pagination: paginationReducer },
       preloadedState,
+      middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware({
+          serializableCheck: false,
+        }),
     }),
     ...renderOptions
   } = {}
