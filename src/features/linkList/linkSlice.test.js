@@ -8,6 +8,9 @@ import reducer, {
   sortByChoice,
 } from "./linkSlice";
 jest.mock("uuid", () => ({ v4: () => "00000000-0000-0000-0000-000000000000" }));
+
+const mockDate = new Date(1640187538860);
+jest.spyOn(global, "Date").mockImplementation(() => mockDate);
 test("should return the initial state", () => {
   expect(reducer(undefined, {})).toEqual({
     links: [],

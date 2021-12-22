@@ -27,21 +27,11 @@ const LinkList = () => {
     sortLinks(linkList),
     pagination.currentPage
   );
-  const [isOpen, setIsOpen] = useState({});
-  const openAlert = (id) => {
-    setIsOpen({ ...isOpen, [id]: true });
-  };
-  const closeAlert = (id) => {
-    setIsOpen({ ...isOpen, [id]: false });
-  };
   useEffect(() => {
     linkList?.links.length !== 0 &&
       sortedList.length === 0 &&
       dispatch(goClickedPage(pagination.currentPage - 1));
   }, [dispatch, pagination.currentPage, sortedList, linkList]);
-  /* useEffect(() => {
-    dispatch(sortByChoice("createdDate"));
-  }, [dispatch]); */
   return (
     <>
       {" "}
@@ -52,10 +42,7 @@ const LinkList = () => {
         sortedList={sortedList}
         upvoteLink={upvoteLink}
         downVoteLink={downVoteLink}
-        openAlert={openAlert}
-        closeAlert={closeAlert}
         removeLink={removeLink}
-        isOpen={isOpen}
       />
       <PaginationList
         listOfPages={linkList?.links}

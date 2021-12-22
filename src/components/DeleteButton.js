@@ -4,6 +4,7 @@ import { AiFillStop } from "react-icons/ai";
 
 const DeleteButton = ({ openAlert }) => (
   <Box
+    aria-label="delete-button"
     onClick={openAlert}
     as={AiFillStop}
     position="absolute"

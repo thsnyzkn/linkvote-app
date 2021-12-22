@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import { useReducer } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
