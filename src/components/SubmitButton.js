@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import { Button, useToast } from "@chakra-ui/react";
 import Toast from "./Toast";
 
@@ -31,4 +31,8 @@ const SubmitButton = ({ title, isFilled }) => {
     </Button>
   );
 };
+
+SubmitButton.propTypes = { title: PropTypes.string, isFilled: PropTypes.bool };
+SubmitButton.defaultProps = { title: "", isFilled: false };
+
 export default SubmitButton;

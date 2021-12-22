@@ -12,8 +12,9 @@ const TitleLinkPanel = ({ title, url }) => (
   </Stack>
 );
 TitleLinkPanel.propTypes = {
-  title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  url: PropTypes.string,
 };
+TitleLinkPanel.defaultProps = { title: "", url: "" };
 
 export default TitleLinkPanel;

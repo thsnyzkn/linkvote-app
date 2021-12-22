@@ -1,6 +1,6 @@
 import { Stack, Flex, Image, Divider, Text } from "@chakra-ui/react";
 
-import hepsiburadaLogo from "../assets/images/hepsiburada.png";
+import hepsiburadaLogo from "../../assets/images/hepsiburada.png";
 
 const Header = () => (
   <Stack px={100} mt={10}>

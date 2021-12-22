@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Box } from "@chakra-ui/react";
 const Toast = ({ title, add }) => (
   <Box
@@ -14,5 +15,9 @@ const Toast = ({ title, add }) => (
     {title.toUpperCase()} {add ? "added" : "removed"}.
   </Box>
 );
-
+Toast.propTypes = {
+  title: PropTypes.string,
+  add: PropTypes.bool,
+};
+Toast.defaultProps = { title: "", add: false };
 export default Toast;

@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import Divider from "../components/Divider";
+import { useEffect } from "react";
+import Divider from "../components/ui/Divider";
 import SubmissionBox from "../components/SubmissionBox";
 import SortSelection from "../components/SortSelection";
 import LinksList from "../components/LinksList";

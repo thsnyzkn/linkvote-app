@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Flex } from "@chakra-ui/react";
-import Header from "../Header";
+import Header from "./Header";
 const Layout = ({ children }) => (
   <>
     <Header />
